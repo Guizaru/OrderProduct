@@ -32,7 +32,6 @@ public class Program {
         OrderStatus stat = checkStatus(sc, null);
         Order order = new Order(new Date(), stat, client);
 
-
         System.out.print("How many items to order? ");
         int num = sc.nextInt();
         for (int i = 0; i < num; i++) {
