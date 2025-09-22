@@ -13,7 +13,7 @@ import java.util.Scanner;
 import static util.CheckMethods.checkDate;
 import static util.CheckMethods.checkStatus;
 
-//teste
+
 public class Program {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
