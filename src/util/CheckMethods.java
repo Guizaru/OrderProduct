@@ -1,7 +1,6 @@
 package util;
 
 import entities.enums.OrderStatus;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,18 +24,31 @@ public class CheckMethods {
         }
         return birthdayDate;
     }
-    public static OrderStatus checkStatus(Scanner sc, OrderStatus orderStat) {
 
+    public static OrderStatus checkStatus(Scanner sc, OrderStatus orderStat) {
+        System.out.println("Enter order data: ");
+        System.out.print("Status : ");
         while (orderStat == null) {
-            System.out.println("Enter order data: ");
-            System.out.print("Status : ");
             String status = sc.nextLine().toUpperCase().trim();
             try {
                 orderStat = OrderStatus.valueOf(status);
             } catch (IllegalArgumentException e) {
-                System.out.println("Invalid status! Try again");
+                System.out.print("Invalid status! Try again: ");
             }
         }
         return orderStat;
+    }
+
+    public static String checkEmail(Scanner sc) {
+        String clientEmail;
+        System.out.print("Email: ");
+        while (true) {
+            clientEmail = sc.nextLine();
+            if (clientEmail.matches("^[\\w.-]+@[\\w.-]+\\.\\w+$")) {
+                break;
+            }
+            System.out.print("Invalid email! Try again: ");
+        }
+        return clientEmail;
     }
 }

@@ -12,7 +12,7 @@ import java.util.Locale;
 import java.util.Scanner;
 import static util.CheckMethods.checkDate;
 import static util.CheckMethods.checkStatus;
-
+import static util.CheckMethods.checkEmail;
 
 public class Program {
     public static void main(String[] args) {
@@ -23,8 +23,7 @@ public class Program {
         System.out.println("Enter client data: ");
         System.out.print("Name: ");
         String name = sc.nextLine();
-        System.out.print("Email: ");
-        String email = sc.nextLine();
+        String email = checkEmail(sc);
         Date birthday = checkDate(sc, sdf);
         Client client = new Client(name, email, birthday);
 
